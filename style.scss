@@ -28,15 +28,16 @@ main {
         top: 2rem;
         bottom: 2rem;
     };
-    > .background-image {
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    &::before {
+        content: '';
+        display: block;
         position: absolute;
+        background-image: url('images/bg-intro-desktop.png');
+        background-size: cover;
         top: 0;
         left: 0;
-        z-index: 1;
+        width: 100%;
+        min-height: 100%;
     }
 }
 
@@ -157,6 +158,9 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
+    main::before {
+        background-image: url('images/bg-intro-mobile.png');
+    }
     .left-card-box {
         text-align: center;
     }
